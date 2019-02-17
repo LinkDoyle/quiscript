@@ -36,4 +36,4 @@ add_custom_command(
         $<TARGET_FILE_DIR:qt_helloworld>
 )
 
-set_target_properties(qt_helloworld PROPERTIES FOLDER "demo")
+set_target_properties(qt_helloworld PROPERTIES FOLDER "Demo")
