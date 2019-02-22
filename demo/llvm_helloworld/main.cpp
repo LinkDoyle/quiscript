@@ -159,7 +159,8 @@ class CodeGenerator : public AstNodeVisitor {
   }
 
   virtual std::any visit(NumberAstNode* node) override {
-    return llvm::ConstantFP::get(context_, llvm::APFloat(node->value()));
+    return std::make_any<llvm::Value*>(
+        llvm::ConstantFP::get(context_, llvm::APFloat(node->value())));
   }
 
   virtual std::any visit(VariableExprAstNode* node) override {
@@ -171,8 +172,8 @@ class CodeGenerator : public AstNodeVisitor {
   }
 
   virtual std::any visit(BinaryExprAst* node) override {
-    auto left = std::any_cast<llvm::ConstantFP*>(visit(node->lhs()));
-    auto right = std::any_cast<llvm::ConstantFP*>(visit(node->rhs()));
+    auto left = std::any_cast<llvm::Value*>(visit(node->lhs()));
+    auto right = std::any_cast<llvm::Value*>(visit(node->rhs()));
     if (!left || !right) {
       return nullptr;
     }
