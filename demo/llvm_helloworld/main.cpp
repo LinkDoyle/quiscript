@@ -1,3 +1,4 @@
+#pragma warning (push, 0)
 #include <llvm/ADT/STLExtras.h>
 #include <llvm/ExecutionEngine/ExecutionEngine.h>
 #include <llvm/ExecutionEngine/JITSymbol.h>
@@ -14,6 +15,7 @@
 #include <llvm/Support/DynamicLibrary.h>
 #include <llvm/Support/raw_ostream.h>
 #include <llvm/Target/TargetMachine.h>
+#pragma warning (pop)
 #include <algorithm>
 #include <any>
 #include <cassert>

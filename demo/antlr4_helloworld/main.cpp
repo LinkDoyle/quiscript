@@ -1,11 +1,13 @@
-#include <antlr4-runtime.h>
 #include <iostream>
 #include <map>
 #include <memory>
 #include <unordered_map>
+#pragma warning (push, 0)
+#include <antlr4-runtime.h>
 #include "XMLLexer.h"
 #include "XMLParser.h"
 #include "XMLParserBaseVisitor.h"
+#pragma warning (pop)
 
 using namespace antlr4;
 using namespace antlrxmlparser;
