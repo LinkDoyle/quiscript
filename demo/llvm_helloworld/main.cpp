@@ -117,8 +117,8 @@ class CallExprAstNode : public ExprAstNode {
 
 class PrototypeAstNode : public ExprAstNode {
  public:
-  PrototypeAstNode(const std::string& Name, std::vector<std::string> Args)
-      : name_(Name), args_(std::move(Args)) {}
+  PrototypeAstNode(const std::string& name, std::vector<std::string> args)
+      : name_(name), args_(std::move(args)) {}
   virtual std::any accpet(AstNodeVisitor* visitor) override {
     return visitor->visit(this);
   }
